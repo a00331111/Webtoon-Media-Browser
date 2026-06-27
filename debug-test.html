@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Test</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .success { color: #4a9eff; }
+        .error { color: #ff4a4a; }
+    </style>
+</head>
+<body>
+    <h1>Webtoon Media Browser - Debug Test</h1>
+    <div id="result"></div>
+
+    <script>
+        const result = document.getElementById('result');
+        let html = '<h2>检查结果:</h2><ul>';
+
+        // Check if running in Electron
+        if (typeof window.electronAPI !== 'undefined') {
+            html += '<li class="success">✓ electronAPI 已加载</li>';
+        } else {
+            html += '<li class="error">✗ electronAPI 未加载</li>';
+        }
+
+        // Check if React root exists
+        const root = document.getElementById('root');
+        if (root) {
+            html += '<li class="success">✓ root 元素存在</li>';
+            if (root.children.length > 0) {
+                html += '<li class="success">✓ React 已渲染内容</li>';
+            } else {
+                html += '<li class="error">✗ React 未渲染内容</li>';
+            }
+        } else {
+            html += '<li class="error">✗ root 元素不存在</li>';
+        }
+
+        html += '</ul>';
+        html += '<p>如果看到此页面，说明应用已正常加载。</p>';
+        html += '<p>请检查开发者工具 (F12) 查看控制台错误信息。</p>';
+
+        result.innerHTML = html;
+    </script>
+</body>
+</html>

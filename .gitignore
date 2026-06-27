@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build output
+dist/
+release/
+versions/
+
+# Logs
+logs/
+*.log
+
+# Temp files
+*.tmp
+*.temp
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Electron
+out/
+*.asar
+
+# FFmpeg temp
+assets/ffmpeg/
+
+# Thumbnails cache
+thumbnails/

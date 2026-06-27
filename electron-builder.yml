@@ -1,0 +1,26 @@
+appId: com.webtoon.mediabrowser
+productName: Webtoon Media Browser
+directories:
+  output: release
+files:
+  - dist/**/*
+  - assets/**/*
+  - "!node_modules/**/*"
+asar: true
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  requestedExecutionLevel: asInvoker
+  sign: false
+  verifyUpdateCodeSignature: false
+forceCodeSigning: false
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Webtoon Media Browser
+  deleteAppDataOnUninstall: false
